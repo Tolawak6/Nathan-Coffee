@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160">
+  <g transform="translate(20, 20)">
+    <!-- Placeholder Bean Motif -->
+    <path d="M60 0 C30 0, 10 30, 10 60 C10 90, 30 120, 60 120 C90 120, 110 90, 110 60 C110 30, 90 0, 60 0 Z" fill="#432616" />
+    <path d="M25 70 L45 70 L80 30 L100 30" stroke="#009a44" stroke-width="8" fill="none" stroke-linecap="round" />
+    <path d="M22 80 L40 80 L75 40 L95 40" stroke="#66c68e" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8" />
+    <path d="M58 5 C55 30, 65 50, 63 70 C61 90, 58 115, 58 115" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.9" />
+  </g>
+  <g transform="translate(160, 45)" fill="#009a44" font-family="sans-serif" font-weight="900" font-size="44" letter-spacing="-1">
+    <text y="0">Nouman</text>
+    <text y="42" fill="#432616">Naveed</text>
+    <text y="75" font-size="28" letter-spacing="4" text-transform="uppercase">Coffee</text>
+  </g>
+  <line x1="140" y1="20" x2="140" y2="140" stroke="#432616" stroke-width="2" opacity="0.3" />
+</svg>

@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette — sampled from the official logo ---- */
+  /* Brown: #432616  ·  Green: #009a44                        */
+  --color-coffee-50: #faf4ed;
+  --color-coffee-100: #f0dfc8;
+  --color-coffee-200: #ddb993;
+  --color-coffee-300: #c4905f;
+  --color-coffee-400: #9a6438;
+  --color-coffee-500: #6e4424;
+  --color-coffee-600: #56351c;
+  --color-coffee-700: #432616;
+  --color-coffee-800: #321b10;
+  --color-coffee-900: #21110a;
+  --color-coffee-950: #120905;
+
+  --color-leaf-50: #eaf7ef;
+  --color-leaf-100: #c5ebd4;
+  --color-leaf-200: #8fd9ad;
+  --color-leaf-300: #4fc583;
+  --color-leaf-400: #1faf5c;
+  --color-leaf-500: #009a44;
+  --color-leaf-600: #008038;
+  --color-leaf-700: #00662d;
+  --color-leaf-800: #004d22;
+  --color-leaf-900: #003316;
+  --color-leaf-950: #001a0b;
+
+  --color-cream: #faf6ee;
+  --color-parchment: #f3ecdd;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 36s linear infinite;
+  --animate-kenburns: kenburns 26s ease-in-out infinite alternate;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-scrollcue: scrollcue 2.2s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 14s linear infinite;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.02); }
+    to { transform: scale(1.14); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-9px); }
+  }
+  @keyframes scrollcue {
+    0% { transform: translateY(0); opacity: 1; }
+    75% { transform: translateY(16px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-coffee-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-leaf-600);
+  color: #fff;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: var(--color-coffee-950); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-coffee-600);
+  border-radius: 8px;
+  border: 2px solid var(--color-coffee-950);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-leaf-600); }
+
+/* ---- Film grain overlay for dark sections ---- */
+.grain { position: relative; isolation: isolate; }
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Nav link underline micro-interaction ---- */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 1.5px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-leaf-400), var(--color-leaf-300));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---- Underlined italic flourish for headings ---- */
+.ink-underline { position: relative; white-space: nowrap; }
+.ink-underline svg {
+  position: absolute;
+  left: -2%;
+  bottom: -0.14em;
+  width: 104%;
+  height: 0.32em;
+  overflow: visible;
+}
+.ink-underline svg path {
+  fill: none;
+  stroke: var(--color-leaf-400);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* ---- Focus visibility ---- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-leaf-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---- Image defaults ---- */
+img { user-select: none; }
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
