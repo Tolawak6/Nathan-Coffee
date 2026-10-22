@@ -60,7 +60,7 @@ export function Hero() {
               <img
                 src="/logo.png"
                 alt="Nouman Naveed Coffee"
-                className="h-16 w-auto object-contain sm:h-20"
+                className="h-14 w-auto rounded-x1 object-contain sm:h-20"
                 draggable={false}
               />
             </div>

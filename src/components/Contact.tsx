@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "./SocialIcons";
 
 const CONTACT_ROWS = [
-  { icon: Phone, label: "Phone", value: "+251 •• ••• ••••" },
+  { icon: Phone, label: "Phone", value: "+251 5• ••• ••••" },
   { icon: Mail, label: "Email", value: "••••@noumannaveed•coffee" },
   { icon: MapPin, label: "Location", value: "Ethiopia — address to follow" },
 ];

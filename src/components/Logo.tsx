@@ -1,11 +1,8 @@
 import { cn } from "../utils/cn";
 
 /* ------------------------------------------------------------------ */
-/*  Nouman Naveed Coffee — Logo                                         */
-/*                                                                      */
-/*  Uses the actual logo PNG placed in public/logo.png.                 */
-/*  If the image is missing it falls back to a plain text wordmark.     */
-/*  To use your real logo: drop your logo.png into the /public folder.  */
+/*  Nouman Naveed Coffee — Logo                                      */
+/*  Uses the actual logo PNG placed in public/logo.png.               */
 /* ------------------------------------------------------------------ */
 
 interface LogoProps {
@@ -23,17 +20,15 @@ export function LogoLockup({ className }: LogoProps) {
       aria-label="Nouman Naveed Coffee — Home"
       className={cn("block shrink-0", className)}
     >
-      {/*
-        * mix-blend-mode: multiply makes white pixels transparent so the
-        * logo's white background blends into whatever background is behind it.
-        * The parent div carries the cream colour so white → cream seamlessly.
-        * The brown and green logo colours are unaffected by multiply.
-      */}
-      <div style={{ backgroundColor: "#faf6ee" }} className="rounded-lg">
+      {/* Added rounded-2xl / rounded-3xl and overflow-hidden for smooth rounded edges */}
+      <div 
+        style={{ backgroundColor: "#faf6ee" }} 
+        className="overflow-hidden rounded-2xl p-1"
+      >
         <img
           src="/logo.png"
           alt="Nouman Naveed Coffee"
-          className="h-12 w-auto object-contain"
+          className="h-16 w-auto rounded-xl object-contain"
           style={{ mixBlendMode: "multiply" }}
           draggable={false}
         />
@@ -44,24 +39,15 @@ export function LogoLockup({ className }: LogoProps) {
 
 /* ── Bean-only mark (used in hero & contact card) ── */
 export function LogoMark({ className, tone = "dark" }: LogoProps) {
-  /*
-   * Real logo geometry (traced from the original image):
-   *
-   *  The bean is an ellipse, tilted ~8° clockwise, dark brown #432616.
-   *  A white center-crack curves from top-right to bottom-left.
-   *  Two thick vivid-green (#009a44) diagonal band/stripes cross the bean
-   *  forming a double-chevron "N" shape, with a thin white gap between them.
-   *  The stripes enter from upper-left and exit lower-right.
-   */
   const BROWN = "#432616";
   const GREEN = "#009a44";
   const WHITE = tone === "light" ? "rgba(255,255,255,0.92)" : "#ffffff";
-  const BG    = tone === "light" ? "rgba(0,0,0,0)" : "rgba(0,0,0,0)";
+  const BG = tone === "light" ? "rgba(0,0,0,0)" : "rgba(0,0,0,0)";
 
   return (
     <svg
       viewBox="0 0 200 220"
-      className={cn("shrink-0", className)}
+      className={cn("shrink-0 rounded-2xl", className)}
       role="img"
       aria-label="Nouman Naveed Coffee bean mark"
       style={{ background: BG }}
@@ -84,15 +70,15 @@ export function LogoMark({ className, tone = "dark" }: LogoProps) {
         opacity="0.88"
       />
 
-      {/* ── Double green "N" chevron bands ── */}
+      {/* ── Double green "N" chevron bands with rounded joins and caps ── */}
       {/* Top stripe */}
       <path
         d="M28 105 L60 105 L148 38 L180 38"
         stroke={GREEN}
         strokeWidth="22"
         fill="none"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       {/* Bottom stripe */}
       <path
@@ -100,8 +86,8 @@ export function LogoMark({ className, tone = "dark" }: LogoProps) {
         stroke={GREEN}
         strokeWidth="22"
         fill="none"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       {/* White gap between stripes */}
       <path
@@ -109,8 +95,8 @@ export function LogoMark({ className, tone = "dark" }: LogoProps) {
         stroke={WHITE}
         strokeWidth="6"
         fill="none"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
