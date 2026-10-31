@@ -83,9 +83,9 @@ export function Footer() {
             <h3 className="text-[11px] font-bold tracking-[0.3em] text-leaf-300 uppercase">Contact</h3>
             <ul className="mt-5 space-y-4">
               {[
-                { icon: Phone, text: "+251 •• ••• ••••" },
-                { icon: Mail, text: "••••@noumannaveed•coffee" },
-                { icon: MapPin, text: "Ethiopia — address to follow" },
+                { icon: Phone, text: "+251 944065216" },
+                { icon: Mail, text: "noumannaveed2025@gmail.com" },
+                { icon: MapPin, text: "Ethiopia, Oromia,Furi Close to Seid Yassin" },
               ].map((row) => (
                 <li key={row.text} className="flex items-center gap-3">
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-coffee-900 text-leaf-300 ring-1 ring-cream/10">
