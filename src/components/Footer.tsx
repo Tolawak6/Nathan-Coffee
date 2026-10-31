@@ -94,9 +94,7 @@ export function Footer() {
                   <span className="text-sm text-coffee-100/75">{row.text}</span>
                 </li>
               ))}
-              <li className="text-[10px] font-bold tracking-[0.2em] text-coffee-300/70 uppercase">
-                Details are placeholders
-              </li>
+              
             </ul>
           </div>
         </div>
