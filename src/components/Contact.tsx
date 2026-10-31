@@ -3,9 +3,9 @@ import { Reveal } from "./Reveal";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "./SocialIcons";
 
 const CONTACT_ROWS = [
-  { icon: Phone, label: "Phone", value: "+251 5• ••• ••••" },
-  { icon: Mail, label: "Email", value: "••••@noumannaveed•coffee" },
-  { icon: MapPin, label: "Location", value: "Ethiopia — address to follow" },
+  { icon: Phone, label: "Phone", value: "+251 944065216" },
+  { icon: Mail, label: "Email", value: "noumannaveed2025@gmail.com" },
+  { icon: MapPin, label: "Location", value: "Ethiopia, Oromia,Furi Close to Seid Yassin" },
 ];
 
 const SOCIALS = [
@@ -115,9 +115,6 @@ export function Contact() {
                     <p className="text-[10px] font-bold tracking-[0.24em] text-leaf-700 uppercase">{row.label}</p>
                     <p className="truncate text-[15px] font-semibold text-coffee-900">{row.value}</p>
                   </div>
-                  <span className="ml-auto shrink-0 rounded-full bg-coffee-900/6 px-2.5 py-1 text-[9px] font-bold tracking-[0.18em] text-coffee-700/70 uppercase">
-                    Placeholder
-                  </span>
                 </div>
               ))}
 
