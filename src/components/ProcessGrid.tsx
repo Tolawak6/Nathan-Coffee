@@ -53,12 +53,7 @@ export function ProcessGrid() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
             </div>
 
-              {/* Centered VS Circle */}
-              {(i === 0 || i === 2) && (
-              <div className="absolute top-1/2 right-0 z-30 hidden h-9 w-9 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black text-[10px] font-bold text-white ring-1 ring-white/30 shadow-lg md:flex">
-              VS
-              </div>
-              )}
+             
             {/* Content */}
             <div className="absolute inset-x-0 bottom-0 z-10 p-4 text-center sm:p-6">
               <Reveal delay={i * 0.1}>
